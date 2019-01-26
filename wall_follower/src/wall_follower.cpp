@@ -186,7 +186,7 @@ int main(int argc, char** argv)
     ros::NodeHandle n;
 
     // Inform ROS master that we will be publishing a message of type geometry_msgs::Twist on the robot actuation topic with a publishing queue size of 100
-    motor_command_publisher = n.advertise<geometry_msgs::Twist>("/cmd_vel", 100);
+    motor_command_publisher = n.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity", 100);
 
     // Subscribe to the /scan topic and call the laser_callback function
     laser_subscriber = n.subscribe("/scan", 1000, laser_callback);
