@@ -1,8 +1,9 @@
-[submodule "slam_gmapping"]
-	url = https://github.com/ros-perception/slam_gmapping.git
 [submodule "turtlebot_simulator"]
 	url = https://github.com/turtlebot/turtlebot_simulator.git
 [submodule "turtlebot_interactions"]
 	url = https://github.com/turtlebot/turtlebot_interactions.git
 [submodule "turtlebot"]
 	url = https://github.com/turtlebot/turtlebot.git
+[submodule "turtlebot_apps"]
+	path = turtlebot_apps
+	url = https://github.com/turtlebot/turtlebot_apps.git
