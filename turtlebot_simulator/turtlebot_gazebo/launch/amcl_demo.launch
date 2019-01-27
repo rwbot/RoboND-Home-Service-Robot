@@ -1,9 +1,9 @@
 <launch>
-  <!-- Map server -->
-  <arg name="map_file" default="$(env TURTLEBOT_GAZEBO_MAP_FILE)"/>
+  <!-- Map server <arg name="map_file" default="$(env TURTLEBOT_GAZEBO_MAP_FILE)"/> -->
+  <arg name="map_file" default="/home/nvidia/catkin_ws/src/worlds/kinect-map.yaml"/>
   <arg name="3d_sensor" default="$(env TURTLEBOT_3D_SENSOR)"/>  <!-- r200, kinect, asus_xtion_pro -->
 
-  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" clear_params="true"/>
 
   <!-- Localization -->
   <arg name="initial_pose_x" default="0.0"/>
