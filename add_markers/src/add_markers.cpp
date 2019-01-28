@@ -13,14 +13,14 @@ ros::Publisher marker_pub;
 
 void odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
     const bool is_picking_up = (abs(pickup.position.x - msg->pose.pose.position.x) + abs(pickup.position.y - msg->pose.pose.position.y)) < 1;
-    
+
     const bool is_dropping_off = (abs(dropoff.position.x - msg->pose.pose.position.x) + abs(dropoff.position.y - msg->pose.pose.position.y)) < 2;
-   
+
     if(is_preparing){
         marker_pub.publish(marker);
         //std::cout << "ODOM CALLBACK     PREPARING: " <<  is_preparing << std::endl;
      }
-    
+
     if(is_picking_up){
         is_preparing = false;
         sleep(5);
@@ -34,10 +34,10 @@ void odomCallback(const nav_msgs::Odometry::ConstPtr& msg){
         //std::cout << "IS DROPPING OFF" << std::endl;
     }
 }
-    
-    
-    
-    
+
+
+
+
 int main( int argc, char** argv )
 {
   ros::init(argc, argv, "add_markers");
@@ -49,9 +49,9 @@ int main( int argc, char** argv )
     dropoff.position.x = -7.0;
     dropoff.position.y = -5.5;
     ros::Subscriber marker_sub = n.subscribe("/odom",1000,odomCallback);
-    // Set our initial shape type to be a cube
+    // Set our initial shape type to be a sphere 
     uint32_t shape = visualization_msgs::Marker::SPHERE;
- 
+
 
     marker.header.frame_id = "map";
     marker.header.stamp = ros::Time::now();
@@ -70,7 +70,7 @@ int main( int argc, char** argv )
     marker.color.b = 0.0f;
     marker.color.a = 1.0;
     marker.lifetime = ros::Duration();
-    
+
     marker.pose.position.x = pickup.position.x;
     marker.pose.position.y = pickup.position.y;
 
@@ -78,8 +78,8 @@ int main( int argc, char** argv )
     dropoffMARKER.id = 1;
     dropoffMARKER.pose.position.x = dropoff.position.x;
     dropoffMARKER.pose.position.y = dropoff.position.y;
-    
-    
+
+
     //std::cout << "MAIN" << std::endl;
     marker_pub.publish(marker);
 

@@ -5,6 +5,18 @@
 #		sudo -s source /home/workspace/RoboND-Home-Service-Robot/udasetup.sh
 alias srcb="source /home/workspace/RoboND-Home-Service-Robot/udasetup.sh"
 
+# supposed to return directory containing scripts (bash/shell incompatibility?)
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# or
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+#!/bin/sh
+# CATKIN_DIR="$( cd $( dirname $BASH_SOURCE[0] )/../.. >/dev/null && pwd )"
+# export ROBOT_INITIAL_POSE="-x -3 -y -3"
+# xterm  -e  " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$CATKIN_DIR/src/World/custom_environment.world; " &
+
+# $(find pkg)           # for launch files
+# rospack find pkg      # for bash
 
 
 alias rr="cdcbz; ./gazebo-arm.sh"
@@ -15,7 +27,7 @@ alias rrd="srcb; cdcbz; ./gazebo-arm.sh | tee /home/workspace/RoboND-Home-Servic
 
 #alias cdc="cd /home/workspace/RoboND-Home-Service-Robot" #custom cd command that goes to catkin_ws
 alias cdh="cd /home/workspace/RoboND-Home-Service-Robot"
-alias cdcb="cd /home/workspace/RoboND-Home-Service-Robot/build" 
+alias cdcb="cd /home/workspace/RoboND-Home-Service-Robot/build"
 alias cdcmk="cdcb; make" #goes to catkin_ws, runs catkin_make, waits until it's made, then sources devel/setup.bash
 
 
