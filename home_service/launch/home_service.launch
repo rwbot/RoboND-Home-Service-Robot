@@ -3,16 +3,14 @@
     <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
         <arg name="world_file" value="$(find home_service)/../worlds/uda.world"/>
     </include>
-    
+
     <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
         <param name="TURTLEBOT_3D_SENSOR" value="kinect"/>
         <param name="TURTLEBOT_GAZEBO_MAP_FILE" value="$(find home_service)/../worlds/kinect-map.yaml"/>
+        <arg name="map_file" value="$(find home_service)/../worlds/kinect-map.yaml"/>
     </include>
 <!--
     <node pkg="add_markers" type="add_markers" name="add_markers" output="screen"/>
     <node pkg="pick_objects" type="pick_objects" name="pick_objects" output="screen"/>
 -->
 </launch>
-
-
-
