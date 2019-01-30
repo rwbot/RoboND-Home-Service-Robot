@@ -1,7 +1,7 @@
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # RoboND-PathPlanning
-A wall_follower ROS C++ node for the Home Service Robot Project. This node autonomously drives your robot close to the walls while avoiding obstacles on its path and transporting objects. Implemented 
+Comprehensive capstone for theAutonomous navigation project, where the problem is to implement all 3 steps of autonomous navigation: Perception, Mapping and Localization, Response/Path Planning.
 
 * Created and configured ROS packages to create an autonomous agent that can navigate a simulated house environment. 
 * Modeled a virtual environment using the Gazebo simulator 
